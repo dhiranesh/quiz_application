@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      h2 {
+        font-style: sans-serif;
+        font-size: 30px;
+        text-align: center;
+        background-color: rgba(91, 203, 69, 0.485);
+        padding: 30px;
+        border-radius: 1rem;
+      }
+      .timer {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <header><center>Timer Quiz application</center></header>
+    <p id="clock"></p>
+    <form action="" method="get">
+      <h2 id="question">Java is invented by</h2>
+      <input type="radio" id="option1" name="one" />
+      <label for="">James gosling</label><br />
+      <input type="radio" id="option" name="one" />
+      <label for="">lunis</label><br />
+      <input type="radio" id="option1" name="one" />
+      <label for="">mark</label><br />
+      <input type="radio" id="option" name="one" />
+      <label for="">charles</label><br />
+      <button type="submit" id="question6" onclick="submit()">
+        <a href="result.html" onclick="buttonsubmit()">Submit</a>
+      </button>
+    </form>
+    <script>
+      clock();
+      function clock() {
+        let seconds = 20;
+        const countdown = setInterval(() => {
+          document.getElementById("clock").innerHTML =
+            `<p>Time Left: ${seconds} </p>`;
+          seconds--;
+          if (seconds < 0) {
+            clearInterval(countdown);
+            window.location.href = "result.html";
+          }
+        }, 1000);
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      h2 {
+        font-style: sans-serif;
+        font-size: 30px;
+        text-align: center;
+        background-color: rgba(91, 203, 69, 0.485);
+        padding: 30px;
+        border-radius: 1rem;
+      }
+      .timer {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <header><center>Timer Quiz application</center></header>
+    <p id="clock"></p>
+    <form action="" method="get">
+      <h2 id="question">what is the type of language java</h2>
+      <input type="radio" id="option1" name="one" />
+      <label for="">procedural oriented</label><br />
+      <input type="radio" id="option" name="one" />
+      <label for="">object oriented</label><br />
+      <input type="radio" id="option1" name="one" />
+      <label for="">both</label><br />
+      <input type="radio" id="option" name="one" />
+      <label for="">static programming</label><br />
+      <button type="submit" id="question4">
+        <a href="question5.html">next</a>
+      </button>
+    </form>
+    <script>
+      clock();
+      function clock() {
+        let seconds = 20;
+        const countdown = setInterval(() => {
+          document.getElementById("clock").innerHTML =
+            `<p>Time Left: ${seconds} </p>`;
+          seconds--;
+          if (seconds < 0) {
+            clearInterval(countdown);
+            window.location.href = "question5.html";
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
